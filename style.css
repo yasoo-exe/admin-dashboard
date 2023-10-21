@@ -3,66 +3,81 @@
 }
 
 body {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 .container {
     display: grid;
-    grid-template: 20% 1fr / 20% 1fr;
-    min-height: 100vh;
+    grid-template: 1fr 4fr / 1fr 4fr;
+    height: 100vh;
 }
 
-.navbar {
-    background-color: sandybrown;
-    grid-column: 1 / 2;
-    grid-row: 1 / 3;
+
+nav {
+    background-color: seagreen;
+    grid-area: 1 / 1 / 3 / 2;
+
     display: grid;
-    grid-template: 10% 40% 50% / 1fr;
+    grid-template: 1fr 5fr 5fr / 1fr
 }
 
-.navbar div {
+nav div {
     display: grid;
 }
 
-.one {
-    background-color: gainsboro;
+
+/* adding temporary borders to make the sections */
+div { 
+    border: 1px solid lemonchiffon;
 }
-.two {
-    background-color: springgreen;
-}
-.three {
-    background-color: midnightblue;
+
+
+header {
+    background-color: slateblue;
+    grid-area: 1 / 2 / 2 / 3;
+
+    display: grid;
+    grid-template: 1fr 1fr / 1fr;
 }
 
 
 main {
-    /* background-color: pink; */
+    background-color: teal;
+    grid-area: 2 / 2 / 3 / 3;
+
     display: grid;
-    grid-template-columns: 7fr 3fr;
+    grid-template: 1fr 1fr / 4fr 1fr;
 }
 
-section {
+main .one {
+    grid-area: 1 / 1 / 3 / 2;
+}
+
+main .one div {
     display: grid;
-    grid-template: 0.25fr 1fr 1fr 1fr / 1fr 1fr;
-    background-color: rgb(233, 233, 105);
-
+    height: 100%;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr;
 }
 
-aside {
-    background-color: orange;
+main .two div, main .three div {
     display: grid;
+    height: 100%;
 }
 
-header {
+.search-bar {
     display: grid;
+    grid-template: 1fr / 5% 1fr;
 }
 
-header div:first-of-type {
-    background-color: green;
-}
-header div:nth-of-type(2){
-    background-color: grey;
+.user-login {
+    grid-template: 1fr / 1fr 1fr 2fr;
 }
 
+input {
+    background-color: gray;
+    border-radius: 5%;
+    border: none;
+    height: 50px;
+}
