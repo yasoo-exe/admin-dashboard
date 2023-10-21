@@ -18,10 +18,6 @@ body {
     grid-template: 1fr 4fr / 1fr 4fr;
 }
 
-nav div {
-    border: none;
-}
-
 .nav-links, .logo {
     font-size: x-large;
     color: yellow;
@@ -54,13 +50,54 @@ div {
     border: 1px solid lemonchiffon;
 }
 
+nav div, header .search div {
+    border: none;
+}
+
 
 header {
-    background-color: slateblue;
+    background-color: black;
     grid-area: 1 / 2 / 2 / 3;
 
     display: grid;
     grid-template: 1fr 1fr / 1fr;
+}
+
+.search {
+    display: grid;
+    grid-template: 1fr / 1fr 10% 20%;
+    align-items: center;
+    color: white;
+    gap: 20px;
+    font-size: 20px;
+}
+
+.search div {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-items: center;
+    gap: 10px;
+}
+
+input {
+    background-color: lightyellow;
+    box-shadow: 1px 1px yellow;
+    border-radius: 10%;
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+.greet {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+    color: white;
+}
+
+.greet div {
+    display: grid;
 }
 
 
@@ -85,20 +122,4 @@ main .one div {
 main .two div, main .three div {
     display: grid;
     height: 100%;
-}
-
-.search-bar {
-    display: grid;
-    grid-template: 1fr / 5% 1fr;
-}
-
-.user-login {
-    grid-template: 1fr / 1fr 1fr 2fr;
-}
-
-input {
-    background-color: gray;
-    border-radius: 5%;
-    border: none;
-    height: 50px;
 }
