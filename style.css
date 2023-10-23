@@ -16,7 +16,6 @@ body {
 .container {
     display: grid;
     grid-template: 1fr 4fr / 1fr 5fr;
-    height: 100vh;
 }
 
 .nav-links, .logo {
@@ -28,8 +27,6 @@ body {
     justify-items: center;
 }
 nav {
-    /* background-color: #27005D; */
-    /* background: linear-gradient(to bottom, #27005D, #9400FF); */
     background: linear-gradient(to top, black, #27005D);
     color: white;
     grid-area: 1 / 1 / 3 / 2;
@@ -137,6 +134,8 @@ main {
     display: grid;
     grid-template: 1fr 1fr / 5fr 2fr;
     padding: 20px 10px;
+
+    z-index: -222;
 } 
 
 .projects {
@@ -149,8 +148,11 @@ main {
     gap: 10px;
 }
 
-main > div h3 {
+.projects h3 {
     grid-area: 1 / 1 / 2 / 3;
+}
+
+main > div h3 {
     align-self: center;
     padding: 0px 5px;
     font-size: x-large;
@@ -195,23 +197,22 @@ main > div h3 {
     grid-area: 1 / 2 / 3 / 3;
 
     display: grid;
-    grid-template: 1fr 1fr 1fr 1fr / 1fr;
-    justify-items: center;
+    grid-auto-rows: 1fr;
+    justify-items: start;
     align-items: center;
+
+    padding: 0 10px;
+
 }
 
 .sideimg::before {
+    content: "";
     position: absolute;
     background: url(./images/sidebar.jpeg);
-    background-size: cover;
-    content: "";
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.5;
-}
-
-img {
-    z-index: 155555;
+    z-index: -1;
+    opacity: 0.2;
 }
